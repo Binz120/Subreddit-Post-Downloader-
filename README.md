@@ -6,56 +6,77 @@ A Python script to archive posts from any public subreddit using Reddit's API vi
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Reddit API](https://img.shields.io/badge/Reddit_API-TOS_compliant-orange)
 
+---
+
 ## Features
 
-- 📥 Download Reddit posts with metadata (title, author, score, etc.)
-- 🗂 Save posts in JSON format with timestamps
-- ⏱ Automatic rate limit handling
-- 📂 Creates organized output directories
-- 🔒 Reddit API authentication support
-- 🚫 Error handling for removed/deleted posts
+- 📥 **Download Reddit Posts:** Retrieves posts along with important metadata such as title, author, score, etc.
+- 🗂 **Organized Output:** Saves posts in JSON format with timestamps to easily track updates.
+- ⏱ **Rate Limit Handling:** Automatically respects API rate limits.
+- 📂 **Structured Directories:** Creates organized directories for the output.
+- 🔒 **Reddit API Authentication:** Supports Reddit API authentication for secure requests.
+- 🚫 **Robust Error Handling:** Properly handles errors for removed or deleted posts.
+
+---
 
 ## Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/yourusername/subreddit-post-downloader.git
    cd subreddit-post-downloader
+   ```
 
 2. **Install dependencies**
 
+   ```bash
    pip install -r requirements.txt
+   ```
 
 3. **Configuration**
 
-    Create Reddit App
-    Get API credentials from Reddit Apps:
+   - **Create a Reddit App:**
+     - Visit the [Reddit App Preferences](https://www.reddit.com/prefs/apps) page.
+     - Click on "Create App" and choose the **"Script"** type.
+     - Set the redirect URI to: `http://localhost:8080`
 
-        Go to "Create App"
+   - **Set up credentials:**
+     - Create a `.env` file in the project root and add the following:
 
-        Choose "Script" type
-
-        Use http://localhost:8080 as redirect URI
-
-    Set up credentials
-    Create .env file:
-   
-CLIENT_ID=your_client_id_here
-CLIENT_SECRET=your_client_secret_here
-USER_AGENT=script:subreddit-downloader:v1.0 (by /u/yourusername)
+       ```env
+       CLIENT_ID=your_client_id_here
+       CLIENT_SECRET=your_client_secret_here
+       USER_AGENT=script:subreddit-downloader:v1.0 (by /u/yourusername)
+       ```
 
 4. **Usage**
 
-    Run the script:
-   
-    python download_posts.py
+   Run the script with:
 
-    Enter subreddit name: python
+   ```bash
+   python download_posts.py
+   ```
 
-    Output will be saved to: ./python_posts_<timestamp>/python_posts.json
+   You will be prompted with:
 
-**Sample Output** (python_posts.json):
-json
+   ```
+   Enter subreddit name:
+   ```
+
+   For example, if you enter `python`, the output will be saved to a directory like:
+
+   ```
+   ./python_posts_<timestamp>/python_posts.json
+   ```
+
+---
+
+## Sample Output
+
+Below is an example of what the `python_posts.json` file might look like:
+
+```json
 [
   {
     "title": "Python 3.12 Released!",
@@ -68,15 +89,18 @@ json
     "flair": "Official Announcement"
   }
 ]
+```
 
-API Compliance
+---
 
-    Respect Reddit's API Rules
+## API Compliance
 
-    Default limit: ~60 requests/minute
+- **Respect Reddit's API Rules:**
+  - The script uses a default limit of approximately 60 requests per minute.
+  - Automatic rate limiting is implemented to handle API constraints.
+  - For large-scale operations, consider adding manual delays to ensure compliance.
+  - **Note:** Do not collect personal or private data. Always adhere to Reddit's API policies.
 
-    Automatic rate limiting
+---
 
-    Add manual delays for large operations
-
-    Do not collect personal/private data
+Happy archiving! If you have any questions or issues, feel free to open an issue on the repository.
