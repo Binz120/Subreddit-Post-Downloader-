@@ -24,7 +24,7 @@ A Python script to archive posts from any public subreddit using Reddit's API vi
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/subreddit-post-downloader.git
+   git clone https://github.com/Binz120/subreddit-post-downloader.git
    cd subreddit-post-downloader
    ```
 
