@@ -44,33 +44,18 @@ CLIENT_ID=your_client_id_here
 CLIENT_SECRET=your_client_secret_here
 USER_AGENT=script:subreddit-downloader:v1.0 (by /u/yourusername)
 
-Usage
+4. **Usage**
 
     Run the script:
+   
+    python download_posts.py
 
-bash
-Copy
+    Enter subreddit name: python
 
-python download_posts.py
+    Output will be saved to: ./python_posts_<timestamp>/python_posts.json
 
-    Enter subreddit name when prompted:
-
-text
-Copy
-
-Enter subreddit name: python
-
-    Output will be saved to:
-
-text
-Copy
-
-./python_posts_<timestamp>/python_posts.json
-
-Sample Output (python_posts.json):
+**Sample Output** (python_posts.json):
 json
-Copy
-
 [
   {
     "title": "Python 3.12 Released!",
